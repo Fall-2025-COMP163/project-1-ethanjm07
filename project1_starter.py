@@ -96,7 +96,7 @@ def load_character(filename):
     Returns: character dictionary if successful, None if file not found
     """
     with open(filename,'r') as file:
-        contents = file.read(filename)
+        contents = file.readlines()
         return contents
         
     # TODO: Implement this function
@@ -145,8 +145,9 @@ if __name__ == "__main__":
     print("=== CHARACTER CREATOR ===")
     print("Test your functions here!")
     person = create_character('Ethan','Warrior')
-    print(person)
     save_character(person,"ethan.txt")
+    loaded = load_character('ethan.txt')
+    display_character(person)
     # Example usage:
     # char = create_character("TestHero", "Warrior")
     # display_character(char)

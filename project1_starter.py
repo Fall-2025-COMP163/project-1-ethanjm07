@@ -61,6 +61,10 @@ def calculate_stats(character_class, level):
         strength = (base_strength * 3) * level
         magic = (base_magic * 3) * level
         health = (base_health * 1) * level
+    else:
+        strength = base_strength
+        magic = base_magic
+        health = base_health
     stats = (strength,magic,health,)
     return stats
     """"

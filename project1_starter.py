@@ -13,7 +13,7 @@ def create_character(name, character_class):
     Returns: dictionary with keys: name, class, level, strength, magic, health, gold
     """
 
-    if character_class !=
+
     level = 1
     strength, magic, health = calculate_stats(character_class, level)
     char = {'name' : name,

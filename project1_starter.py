@@ -108,16 +108,32 @@ def display_character(character):
     Prints formatted character sheet
     Returns: None (prints to console)
     """""
-    print("=== CHARACTER SHEET ===")
-    print(f"Name: {character['name']}")
-    print(f"Class: {character['class']}")
-    print(f"Level: {character['level']}")
-    print(f"Strength: {character['strength']}")
-    print(f"Magic: {character['magic']}")
-    print(f"Health: {character['health']}")
-    print(f"Gold: {character['gold']}")
-    
-    """""    Example output:
+    with open(filename,'r') as file:
+        lines = file.readlines()
+        character = {}
+        for line in lines:
+            if ':' in line:
+                key, value = line.strip().split(":", 1)
+                key = key.strip()
+                value = value.strip()
+                
+                if key == "Character Name":
+                    character["name"] = value
+                elif key == "Class":
+                    character["class"] = value
+                elif key == "Level":
+                    character["level"] = int(value)
+                elif key == "Strength":
+                    character["strength"] = int(value)
+                elif key == "Magic":
+                    character["magic"] = int(value)
+                elif key == "Health":
+                    character["health"] = int(value)
+                elif key == "Gold":
+                    character["gold"] = int(value)
+                return character
+    """""   
+    Example output:
     === CHARACTER SHEET ===
     Name: Aria
     Class: Mage

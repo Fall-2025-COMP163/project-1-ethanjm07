@@ -61,8 +61,6 @@ def calculate_stats(character_class, level):
         strength = (base_strength * 3) * level
         magic = (base_magic * 3) * level
         health = (base_health * 1) * level
-    else:
-        return print(f'invalid character class, {character_class}')
     stats = (strength,magic,health,)
     return stats
     """"

@@ -1,0 +1,7 @@
+Character Name:Ethan
+Class: Warrior
+Level:1
+Strength:25
+Magic:5
+Health:50
+Gold:50

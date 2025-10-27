@@ -95,11 +95,11 @@ def load_character(filename):
     Loads character from text file
     Returns: character dictionary if successful, None if file not found
     """
-    with open(filename,'r') as file:
+    
         
     # TODO: Implement this function
     # Remember to handle file not found errors
-    return 
+    pass
 
 def display_character(character):
     """

@@ -3,7 +3,8 @@ COMP 163 - Project 1: Character Creator & Saving/Loading
 Name: Ethan Mitchell
 Date: 10/20/25
 
-AI Usage: Microsoft Copilet helped with logic issues in create character function.
+AI Usage: Microsoft Copilet helped with logic issues in create character function. In\
+save_character function, AI helped with bad directory logic issue
 Example: AI helped with file I/O error handling logic in save_character function
 """
 import os
@@ -63,6 +64,10 @@ def save_character(character, filename):
     Saves character to text file in specific format
     Returns: True if successful, False if error occurred
     """
+    directory = os.path.dirname(filename)
+    if directory and not os.path.exists(directory):
+        # Directory does not exist
+        return False
     with open(filename, 'w') as file:
             file.write(f"Character Name:{character['name']}\n")
             file.write(f"Class: {character['class']}\n")
@@ -121,15 +126,6 @@ def display_character(character):
     Prints formatted character sheet
     Returns: None (prints to console)
     """""
-    if not os.path.exists(character):
-        print("Error: File not found.")
-        return None
-
-    character = load_character(character)
-    if character is None:
-        print("Error: Could not load character.")
-        return None
-
     print("=== CHARACTER SHEET ===")
     print(f"Name: {character['name']}")
     print(f"Class: {character['class']}")

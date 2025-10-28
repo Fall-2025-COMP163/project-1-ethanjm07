@@ -121,10 +121,13 @@ def display_character(character):
     Prints formatted character sheet
     Returns: None (prints to console)
     """""
-    character = load_character(filename)
+    if not os.path.exists(character):
+        print("Error: File not found.")
+        return None
 
+    character = load_character(character)
     if character is None:
-        print("Cannot display character: file not found.")
+        print("Error: Could not load character.")
         return None
 
     print("=== CHARACTER SHEET ===")
@@ -135,8 +138,6 @@ def display_character(character):
     print(f"Magic: {character['magic']}")
     print(f"Health: {character['health']}")
     print(f"Gold: {character['gold']}")
-
-    return character
 
     # TODO: Implement this function
     

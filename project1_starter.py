@@ -6,6 +6,7 @@ Date: 10/20/25
 AI Usage: Microsoft Copilet helped with logic issues in create character function.
 Example: AI helped with file I/O error handling logic in save_character function
 """
+import os
 
 def create_character(name, character_class):
     """
